@@ -1,9 +1,17 @@
 var express = require('express');
 var app = express();
 
+var getGreeting = require("./getGreeting");
+var getDate = require('./getDate');
+var database = require('./database');
+
 app.get('/', (req, res) => {
-  res.send(`<h1>Hello Console Brawl</h1>
-    <p>The current time iss ${new Date().toISOString()}<p>`);
+  var greeting = getGreeting();
+  var date = getDate();
+  database.logRequest(greeting, date, (err, count) => {
+    res.send(`<h1>${greeting}</h1>
+      <p>There have been ${count} visits to this page.<p>`);
+  });
 });
 
 app.listen(3000, function () {
