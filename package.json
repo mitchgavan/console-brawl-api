@@ -17,10 +17,13 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.17.4",
-    "mongodb": "^2.2.21"
+    "mongodb": "^2.2.21",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.13.1",
-    "eslint-config-node": "^1.6.0"
+    "eslint-config-node": "^1.6.0",
+    "supertest": "^2.0.1"
   }
 }
