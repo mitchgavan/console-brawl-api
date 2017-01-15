@@ -1,0 +1,12 @@
+{
+    "extends": ["node"],
+    "env": {
+        "node": true,
+        "jasmine": true
+    },
+    "rules": {
+        "indent": [1, 2],
+        "no-console": 0,
+        "import/no-commonjs": 0,
+    }
+}
