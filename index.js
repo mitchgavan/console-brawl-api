@@ -50,6 +50,17 @@ app.put('/games/:id', (req, res) => {
   }
 });
 
+app.delete('/games/:id', (req, res) => {
+  const game = _.findIndex(games, { id: parseInt(req.params.id) });
+  if (!games[game]) {
+    res.send();
+  } else {
+    const deletedGame = games[game];
+    games.splice(game, 1);
+    res.json(deletedGame);
+  }
+});
+
 app.listen(3000, () => {
   console.log('Console Brawl listening on port 3000!');
 })
