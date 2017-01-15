@@ -27,14 +27,27 @@ app.get('/games', (req, res) => {
 });
 
 app.get('/games/:id', (req, res) => {
-  const lion = _.find(games, { id: req.params.id });
-  res.json(lion || {});
+  const game = _.find(games, { id: parseInt(req.params.id) });
+  res.json(game || {});
 });
 
 app.post('/games', (req, res) => {
   const game = req.body;
   games.push(game);
   res.json(game);
+});
+
+app.put('/games/:id', (req, res) => {
+  const update = req.body;
+  if (update.id) delete update.id;
+
+  const game = _.findIndex(games, { id: parseInt(req.params.id) });
+  if (!games[game]) {
+    res.send();
+  } else {
+    const updatedGame = _.assign(games[game], update);
+    res.json(updatedGame);
+  }
 });
 
 app.listen(3000, () => {
