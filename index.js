@@ -13,6 +13,16 @@ const games = [];
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.param('id', (req, res, next, id) => {
+  const game = _.find(games, { id: parseInt(id) });
+  if (game) {
+    req.game = game;
+    next();
+  } else {
+    res.send();
+  }
+});
+
 app.get('/', (req, res) => {
   const greeting = getGreeting();
   const date = getDate();
@@ -27,7 +37,7 @@ app.get('/games', (req, res) => {
 });
 
 app.get('/games/:id', (req, res) => {
-  const game = _.find(games, { id: parseInt(req.params.id) });
+  const game = req.game;
   res.json(game || {});
 });
 
@@ -58,6 +68,12 @@ app.delete('/games/:id', (req, res) => {
     const deletedGame = games[game];
     games.splice(game, 1);
     res.json(deletedGame);
+  }
+});
+
+app.use((err, req, res, next) => {
+  if (err) {
+    res.status(500).send(err);
   }
 });
 
