@@ -1,11 +1,11 @@
-const express = require('express');
-const gameRouter = express.Router();
+const router = require('express').Router();
+const logger = require('../../util/logger');
 const _ = require('lodash');
 
 // local db example
 const games = [];
 
-gameRouter.param('id', (req, res, next, id) => {
+router.param('id', (req, res, next, id) => {
   const game = _.find(games, { id: parseInt(id) });
   if (game) {
     req.game = game;
@@ -15,7 +15,7 @@ gameRouter.param('id', (req, res, next, id) => {
   }
 });
 
-gameRouter.route('/')
+router.route('/')
   .get((req, res) => {
     res.json(games);
   })
@@ -25,7 +25,7 @@ gameRouter.route('/')
     res.json(game);
   });
 
-gameRouter.route('/:id')
+router.route('/:id')
   .get((req, res) => {
     const game = req.game;
     res.json(game || {});
@@ -53,4 +53,4 @@ gameRouter.route('/:id')
     }
   });
 
-module.exports = gameRouter;
+module.exports = router;

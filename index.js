@@ -1,5 +1,7 @@
+const config = require('./server/config/config');
 const app = require('./server/server');
+const logger = require('./server/util/logger');
 
-app.listen(3000, () => {
-  console.log('Console Brawl listening on port 3000!');
+app.listen(config.port, () => {
+  logger.log(`Console Brawl listening on port ${config.port}`);
 })
