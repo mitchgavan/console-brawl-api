@@ -5,7 +5,9 @@ const config = {
   dev: 'development',
   test: 'test',
   prod: 'production',
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
+  expireTime: 24 * 60 * 10, // 10 days in minutes
+  secret: process.env.SECRET || 'gumball'
 };
 
 process.env.NODE_ENV = process.env.NODE_ENV || config.dev;

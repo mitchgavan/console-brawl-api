@@ -20,4 +20,5 @@ app.use('/api', api);
 // setup global error handling
 app.use(err());
 
+// export the app for testing
 module.exports = app;
