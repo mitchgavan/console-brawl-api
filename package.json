@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "now -e NODE_ENV=production -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e API_KEY=@api_key"
   },
   "author": "Mitch Gavan",
   "license": "ISC",
