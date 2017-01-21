@@ -6,7 +6,6 @@ const config = {
   test: 'test',
   prod: 'production',
   port: process.env.PORT || 3000,
-  expireTime: 24 * 60 * 10, // 10 days in minutes
   secret: process.env.SECRET || 'gumball'
 };
 

@@ -6,7 +6,7 @@ module.exports = function() {
     if (req.headers.authorization === config.secret) {
       next();
     } else {
-      console.log('API secret has not been supplied');
+      console.log('API secret is required');
       res.status(401).send();
     }
 
