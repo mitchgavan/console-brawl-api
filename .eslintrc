@@ -2,7 +2,7 @@
     "extends": ["node"],
     "env": {
         "node": true,
-        "jasmine": true
+        "jasmine": true,
     },
     "rules": {
         "indent": [1, 2],
