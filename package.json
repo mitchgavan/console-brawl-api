@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha server/spec.js",
-    "deploy": "now -e NODE_ENV=production -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e API_KEY=@api_key"
+    "deploy": "now -e NODE_ENV=production -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e USERNAME=@cb_username -e PASSWORD=@cb_password"
   },
   "author": "Mitch Gavan",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "colors": "^1.1.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
+    "express-basic-auth": "^1.0.2",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7",

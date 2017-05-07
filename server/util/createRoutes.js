@@ -1,14 +1,12 @@
-const checkAuthorized = require('../auth/auth')
-
 module.exports = function(controller, router) {
   router.param('id', controller.params);
 
   router.route('/')
-    .get(checkAuthorized(), controller.get)
-    .post(checkAuthorized(), controller.post)
+    .get(controller.get)
+    .post(controller.post)
 
   router.route('/:id')
-    .get(checkAuthorized(), controller.getOne)
-    .put(checkAuthorized(), controller.put)
-    .delete(checkAuthorized(), controller.delete)
+    .get(controller.getOne)
+    .put(controller.put)
+    .delete(controller.delete)
 };

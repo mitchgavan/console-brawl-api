@@ -6,7 +6,8 @@ const config = {
   test: 'test',
   prod: 'production',
   port: process.env.PORT || 3000,
-  secret: process.env.API_KEY
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD
 };
 
 process.env.NODE_ENV = process.env.NODE_ENV || config.dev;
