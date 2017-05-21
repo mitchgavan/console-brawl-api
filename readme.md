@@ -11,7 +11,7 @@ Create MongoDB database and configure environment variables.
 `npm start`
 
 ### Run tests
-`npm start`
+`npm test`
 
 ### Deploy
 `npm deploy-api1` and `npm deploy-api-2`
