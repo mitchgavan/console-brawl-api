@@ -2,7 +2,10 @@
 `npm install`
 
 #### Local
-Install MongoDB and create database.
+Install MongoDB and create a database at localhost/nodeconsolebrawl.
+
+#### test
+Create a MongoDB database at localhost/nodeconsolebrawl-test.
 
 #### Release
 Create MongoDB database and configure environment variables.
