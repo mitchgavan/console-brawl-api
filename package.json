@@ -1,12 +1,13 @@
 {
   "name": "console-brawl-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An API for the Console Brawl app.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "mocha server/spec.js",
-    "deploy": "now -e NODE_ENV=production -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e USERNAME=@cb_username -e PASSWORD=@cb_password"
+    "deploy-api1": "now -e NODE_ENV=production -e MONGO_DB_URL=@mongo_db_url_1 -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e USERNAME=@cb_username -e PASSWORD=@cb_password",
+    "deploy-api2": "now -e NODE_ENV=production -e MONGO_DB_URL=@mongo_db_url_2 -e MONGO_USER=@mongo_user -e MONGO_PW=@mongo_pw -e USERNAME=@cb_username -e PASSWORD=@cb_password"
   },
   "author": "Mitch Gavan",
   "license": "ISC",
